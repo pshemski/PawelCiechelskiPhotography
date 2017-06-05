@@ -1,0 +1,14 @@
+<% if @category.errors.any? %>
+		<% @category.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+<%= form_for @category do |f| %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control' %>
+	</div>
+	<br>
+	<%= f.submit class: 'btn btn-md btn-primary-filled btn-form-submit' %>
+	<%= link_to 'Back', categories_path, class: 'btn btn-md btn-primary-filled' %>
+<% end %>

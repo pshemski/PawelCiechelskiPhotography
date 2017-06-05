@@ -1,0 +1,40 @@
+<!-- projects -->
+<section id="portfolio" class="no-gutter">
+    <!-- portfolio filter -->
+    <ul class="portfolio-filter list-inline text-center">
+        <li><%= link_to 'All', '#', data: { group: "all" }, class: 'active' %></li>
+        <% @categories.each do |cat| %>
+            <li><%= link_to cat.name, '#', data: { group: "#{cat.id}" } %></li>
+        <% end %>
+    </ul><!--end portfolio filter -->
+    <ul class="row portfolio list-unstyled gallery" id="grid">
+        <% @images.each do |image| %>
+            <!-- project -->
+                <%= tag :li, class: ['col-xs-6', 'col-sm-3', 'project'], data: { groups: "[#{image.category.id}]" } %>
+                <figure class="portfolio-item">
+                    <div class="hovereffect">  
+                        <%= link_to image.image.url, data: { lightbox: "all", title: "#{image.image_title}" } do %>
+                            <%= image_tag image.image.url, class: 'img-responsive' %>                               
+                            <div class="overlay">
+                                <div class="hovereffect-title">
+                                    <h5><%= image.image_title %></h5>
+                                    <p><%= image.image_description %></p>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </figure>
+                <% if admin_signed_in? %>
+                    <%= link_to 'Edit', edit_image_path(image), class: 'btn btn-sm btn-default' %>
+                    <%= link_to 'Delete', image_path(image), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
+                <% end %>
+            </li>
+            <!-- / project -->
+        <% end %>
+        <!-- sizer -->
+        <li class="col-xs-6 col-sm-3 shuffle_sizer"></li>      
+    </ul> <!-- / projects -->
+</section>
+<!-- / portfolio section 4col -->
+
+<%= javascript_include_tag 'jquery.easing.min', 'preloader', 'jquery.shuffle.min', 'custom', media: 'all', 'data-turbolinks-track' => true %>

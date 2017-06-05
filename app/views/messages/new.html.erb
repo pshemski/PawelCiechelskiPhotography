@@ -1,0 +1,48 @@
+<div class="section-w-image">
+    <div class="row">
+        <div class="col-md-5 contact-image" style="background: url(<%= @contact_image.image if @contact_image != nil %>) scroll center no-repeat;background-size: 100% 100%;"><p></p></div>
+        <div class="col-md-7 col-md-offset-5 section-description dark">
+            <div class="page-header text-left">
+                <h2>Get in Touch</h2>
+            </div><!-- / page-header -->
+            <br>
+            <p>If you are interested in cooperation, if you need a specific shot taken just for you or if you would like to buy one of my photos please do not hesitate to contact me by filling out the form below or catch me on facebook.</p>
+            <div class="contact-info">
+                <div class="info">
+                    <span class="social">
+                        <%= link_to 'https://web.facebook.com/pawel.ciechelski?fref=ts' do %><i class="fa fa-facebook-official fa-lg"></i><% end %>
+                    </span>
+                </div>
+            </div><!-- / contact-info -->
+        </div><!-- / section-description -->
+    </div><!-- / row -->
+</div><!-- / contact-w-image-left -->
+
+<div class="row contact-area">
+    <div class="col-sm-8 col-sm-offset-2 contact-form-area">
+        <!-- contact form 1col -->
+        <div id="contact-form-1">
+            <%= form_for @message, url: contact_path, id: 'contactForm', data: { toggle: 'validator' } do |f| %>
+                <div class="form-group">
+                  <%= f.text_field :name, placeholder: "Name", class: 'form-control', required: true %>
+                  <div class="help-block with-errors"></div>
+                </div>
+                
+                <div class="form-group">
+                  <%= f.email_field :email, placeholder: "Email", class: 'form-control', required: true %>
+                  <div class="help-block with-errors"></div>
+                </div>
+                
+                <div class="form-group">
+                  <%= f.text_area :message, placeholder: "Message", class: 'form-control', rows: '5', required: true %>
+                  <div class="help-block with-errors"></div>
+                </div>
+                
+                  <%= f.submit "Send Message", id: 'form-submit', class: 'btn btn-md btn-primary-filled btn-form-submit' %>
+                <div id='msgSubmit' class="h3 text-center hidden"></div>
+                <div class="clearfix"></div>
+            <% end %>
+        </div><!-- / contact form 1col -->
+    </div><!-- / col-sm-6 -->
+</div><!-- / contact-area -->
+<%= javascript_include_tag 'jquery.easing.min', 'scrolling-nav', 'preloader', media: 'all', 'data-turbolinks-track' => true %>

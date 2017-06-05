@@ -1,0 +1,32 @@
+<!-- header -->
+<header>
+    <nav class="navbar-1 navbar navbar-default fixed-top">
+        <div class="container-fluid navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <%= link_to 'Pawel Ciechelski Photography', root_path, class: "navbar-brand" %>
+        </div><!-- / navbar-header -->
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            <% if admin_signed_in? %>
+                <li <% if [params[:controller], params[:action]]  == ['pages', 'home'] %>class='active'<% end %>><%= link_to root_path do %><span>Home</span><% end %></li>                 
+                <li <% if [params[:controller], params[:action]]  == ['images', 'index'] %>class='active'<% end %>><%= link_to gallery_path do %><span>Gallery</span><% end %></li>
+                <li <% if [params[:controller], params[:action]]  == ['images', 'new'] %>class='active'<% end %>><%= link_to upload_path do %><span>Add Image</span><% end %></li>
+                <li <% if [params[:controller], params[:action]]  == ['categories', 'index'] %>class='active'<% end %>><%= link_to categories_path do %><span>Categories</span><% end %></li>
+                <li <% if [params[:controller], params[:action]]  == ['admin', 'show'] %>class='active'<% end %>><%= link_to show_admin_path(current_admin.id) do %><span>My Account</span><% end %></li>
+                <li><%= link_to destroy_admin_session_path, method: :delete do %><span>Sign Out</span><% end %></li>
+            <% else %>
+                <li <% if [params[:controller], params[:action]]  == ['pages', 'home'] %>class='active'<% end %>><%= link_to root_path do %><span>Home</span><% end %></li>
+                <li <% if [params[:controller], params[:action]]  == ['pages', 'about'] %>class='active'<% end %>><%= link_to about_path do %><span>About Me</span><% end %></li> 
+                <li <% if [params[:controller], params[:action]]  == ['images', 'index'] %>class='active'<% end %>><%= link_to gallery_path do %><span>Gallery</span><% end %></li>
+                <li <% if [params[:controller], params[:action]]  == ['messages', 'new'] %>class='active'<% end %>><%= link_to contact_path do %><span>Contact</span><% end %></li>
+            <% end %>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </nav>
+</header>
+<!-- / header -->

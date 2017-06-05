@@ -1,0 +1,22 @@
+<h2>Categories</h2>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Category Name</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @categories.each do |cat| %>
+		<tr>
+			<td><%= cat.name %></td>
+			<td>
+				<%= link_to 'Edit', edit_category_path(cat), class: 'btn btn-xs btn-default' %>
+				<%= link_to 'Delete', category_path(cat), method: :delete, data: { confirm: 'All images assosiated with this category will be deleted! Are you sure?' }, class: 'btn btn-xs btn-danger' %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<%= link_to 'Add Category', new_category_path, class: 'btn btn-md btn-primary-filled btn-form-submit' %>
+<%= javascript_include_tag 'scrolling-nav', 'preloader', 'data-turbolinks-track' => true %>

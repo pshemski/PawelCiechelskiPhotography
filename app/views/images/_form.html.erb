@@ -1,0 +1,31 @@
+<%= form_for @image, html: { multipart: true } do |f| %>
+	<% if @image.errors.any? %>
+		<% @image.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<div class="form-group">
+		<%= f.label :image %>
+		<%= f.file_field :image %>
+	</div>
+	<br>
+	<div class="form-group">
+		<%= f.label :image_title %>
+		<%= f.text_field :image_title, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label :category %>
+		<%= f.select :category_id, Category.all.collect { |cat| [cat.name, cat.id] }, { include_blank: '- select one -' }, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label :image_description %>
+		<%= f.text_area :image_description, class: 'form-control' %>
+	</div>
+	<div class="form-group">
+		<%= f.label :front_page_image %>
+		<%= f.check_box :front_page_image %>
+	</div>
+	
+	<%= f.submit class: 'btn btn-md btn-primary-filled btn-form-submit' %>
+	<%= link_to 'Cancel', gallery_path, class: 'btn btn-md btn-primary-filled' %>
+<% end %>
