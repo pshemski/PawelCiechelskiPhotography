@@ -22,6 +22,7 @@ gem 'carrierwave_backgrounder', :git => 'https://github.com/lardawge/carrierwave
 gem 'devise'
 gem 'devise-bootstrap-views'
 gem 'figaro'
+gem 'puma'
 
 group :development, :test do
 	gem 'sqlite3'
