@@ -12,9 +12,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-# gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 # gem 'capistrano-rails', group: :development
+gem 'font-awesome-rails'
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+gem 'fog-aws', '~> 1.3.0'
+gem 'carrierwave_backgrounder', :git => 'https://github.com/lardawge/carrierwave_backgrounder.git'
+gem 'devise'
+gem 'devise-bootstrap-views'
+gem 'figaro'
 
 group :development, :test do
 	gem 'sqlite3'
@@ -24,6 +31,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'letter_opener'
 end
 
 group :production do
