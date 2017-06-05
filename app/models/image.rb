@@ -1,6 +1,5 @@
 class Image < ActiveRecord::Base
 	belongs_to :category
-	belongs_to :admin
 	mount_uploader :image, ImageUploader
 
 	before_save :update_image_attributes
