@@ -24,11 +24,7 @@ class MessagesController < ApplicationController
   end
 
   def set_image
-		images = Image.where(front_page_image: true)
-  	landscape_images = []
-		images.each do |img|
-			landscape_images << img if img.image.is_landscape?(img.image)
-		end
-		@contact_image = landscape_images.sample
+		images = Image.where(front_page_image: true, landscape: true)
+		@contact_image = images.sample
 	end
 end
