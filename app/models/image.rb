@@ -11,7 +11,7 @@ class Image < ActiveRecord::Base
 		if image.present? || image.changed?
 			self.image_file_size = image.file.size
 			self.image_content_type = image.file.content_type
-			self.landscape = true if image.is_landscape?(self.image)
+			self.landscape = true if image.file.is_landscape?(self.image)
 		end
 	end
 end
