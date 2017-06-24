@@ -8,7 +8,7 @@ class Image < ActiveRecord::Base
 	private
 
 	def update_image_attributes
-		if image.present? || image.changed?
+		if image.new_record? || image.image_changed?
 			self.image_file_size = image.file.size
 			self.image_content_type = image.file.content_type
 			self.landscape = true if image.file.is_landscape?(self.image)
