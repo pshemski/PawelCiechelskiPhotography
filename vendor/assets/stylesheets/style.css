@@ -2,7 +2,7 @@
 /* line 6, ../scss/style.scss */
 body {
   color: #999999;
-  background: #f8f8f8;
+  background: #fff;
   font-family: "Rubik", sans-serif;
   font-weight: 300;
   font-size: 16px;
@@ -2793,6 +2793,7 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 /* line 589, ../scss/style.scss */
 #page-content.has-fixed-top {
   padding-top: 90px;
+  max-width: 1440px;
 }
 
 /* line 593, ../scss/style.scss */
@@ -2846,6 +2847,8 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
 /* line 634, ../scss/style.scss */
 .section-w-image {
   position: relative;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /* line 638, ../scss/style.scss */

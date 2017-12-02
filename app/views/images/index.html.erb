@@ -14,7 +14,7 @@
                 <figure class="portfolio-item">
                     <div class="hovereffect">  
                         <%= link_to image.image.url, data: { lightbox: "all", title: "#{image.image_title}" } do %>
-                            <%= image_tag image.image.url, class: 'img-responsive' %>                               
+                            <%= image_tag image.image.url(:thumb), class: 'img-responsive' %>                               
                             <div class="overlay">
                                 <div class="hovereffect-title">
                                     <h5><%= image.image_title %></h5>
