@@ -3727,7 +3727,7 @@ footer .social a {
   /* line 53, ../scss/_media-screens.scss */
   .about-image {
     position: relative;
-    height: 620px;
+    height: 720px;
   }
 
   /* line 63, ../scss/_media-screens.scss */
@@ -3738,7 +3738,7 @@ footer .social a {
   /* line 67, ../scss/_media-screens.scss */
   .contact-image {
     position: relative;
-    height: 620px;
+    height: 720px;
   }
 
   /* line 72, ../scss/_media-screens.scss */
@@ -4056,7 +4056,7 @@ footer .social a {
 
   /* line 390, ../scss/_media-screens.scss */
   .about-image {
-    height: 420px;
+    height: 450px;
   }
 
   /* line 398, ../scss/_media-screens.scss */
@@ -4067,7 +4067,7 @@ footer .social a {
 
   /* line 403, ../scss/_media-screens.scss */
   .contact-image {
-    height: 420px;
+    height: 450px;
   }
 
   /* line 407, ../scss/_media-screens.scss */
@@ -4115,11 +4115,11 @@ footer .social a {
   }
 
   .about-image {
-    height: 300px;
+    height: 330px;
   }
 
   .contact-image {
-    height: 300px;
+    height: 330px;
   }
 
   /* line 464, ../scss/_media-screens.scss */
