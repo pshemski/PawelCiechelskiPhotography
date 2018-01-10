@@ -3727,7 +3727,7 @@ footer .social a {
   /* line 53, ../scss/_media-screens.scss */
   .about-image {
     position: relative;
-    height: 450px;
+    height: 620px;
   }
 
   /* line 63, ../scss/_media-screens.scss */
@@ -3738,7 +3738,7 @@ footer .social a {
   /* line 67, ../scss/_media-screens.scss */
   .contact-image {
     position: relative;
-    height: 450px;
+    height: 620px;
   }
 
   /* line 72, ../scss/_media-screens.scss */
@@ -3799,6 +3799,16 @@ footer .social a {
   .navbar-1 li a span {
     position: relative;
     padding-bottom: 10px;
+  }
+
+  .about-image {
+    position: relative;
+    height: 550px;
+  }
+
+  .contact-image {
+    position: relative;
+    height: 550px;
   }
 
   /* line 135, ../scss/_media-screens.scss */
@@ -4046,7 +4056,7 @@ footer .social a {
 
   /* line 390, ../scss/_media-screens.scss */
   .about-image {
-    height: 300px;
+    height: 420px;
   }
 
   /* line 398, ../scss/_media-screens.scss */
@@ -4057,7 +4067,7 @@ footer .social a {
 
   /* line 403, ../scss/_media-screens.scss */
   .contact-image {
-    height: 300px;
+    height: 420px;
   }
 
   /* line 407, ../scss/_media-screens.scss */
@@ -4102,6 +4112,14 @@ footer .social a {
   .media-object {
     max-width: 100px;
     max-height: 100px;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+
+  .contact-image {
+    height: 300px;
   }
 
   /* line 464, ../scss/_media-screens.scss */
