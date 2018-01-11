@@ -2479,9 +2479,13 @@ table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table
   color: #cccccc !important;
   font-size: 20px;
   line-height: 20px;
-  font-weight: 300;
+  font-weight: 400;
   height: 60px;
   padding: 20px 15px;
+}
+
+.sm-navbar-brand {
+  display: none;
 }
 
 /* line 314, ../scss/style.scss */
@@ -3782,16 +3786,22 @@ footer .social a {
   }
 
   /* line 118, ../scss/_media-screens.scss */
-  .navbar-brand {
+  .sm-navbar-brand {
+    color: #cccccc !important;
     font-size: 20px;
     line-height: 20px;
-    font-weight: 700;
+    font-weight: 500;
     height: 50px;
     padding: 15px 15px;
+    display: inline-block;
+  }
+
+  .navbar-brand {
+    display: none;
   }
 
   /* line 127, ../scss/_media-screens.scss */
-  .navbar-nav > li > a {
+  .sm-navbar-nav > li > a {
     font-size: 13px !important;
   }
 
