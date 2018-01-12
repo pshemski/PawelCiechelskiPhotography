@@ -34,7 +34,7 @@ class ImagesController < ApplicationController
   end
 
   def index
-    @images = Image.all
+    @images = Image.order('id DESC')
     @categories = Category.all
   end
 
