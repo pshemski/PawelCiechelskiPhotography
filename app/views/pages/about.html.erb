@@ -1,23 +1,22 @@
 <!-- content -->
 <div class="section-w-image">
-    <div class="row">
-        <div class="col-md-4 contact-image" style="background: url(<%= @admin.profile_picture if @admin %>) scroll center no-repeat;background-size: 100% 100%;"><p></p></div>
-        <div class="col-md-8 col-md-offset-4 section-description dark">
-            <h3>About Me</h3>
-            <br>
-            <h5>Traveller, recreational and technical diving instructor, cave diver and photographer.</h5>
-            <br>
-            <p><%= @admin.about if @admin %></p>
-            <div class="contact-info">
-                <div class="info">
-                    <span class="social">
-                        <%= link_to 'https://web.facebook.com/Pawel-Ciechelski-Photography-1307521106035720/' do %><i class="fa fa-facebook-official"></i><% end %>
-                    </span>
-                </div>
-            </div><!-- / contact-info -->
-        </div><!-- / section-description -->
-    </div><!-- / row -->
+	<div class="row">
+		<div class="col-md-4 contact-image" style="background: url(<%= @admin.profile_picture if @admin %>) scroll center no-repeat;background-size: 100% 100%;"><p></p></div>
+		<div class="col-md-8 col-md-offset-4 section-description dark">
+			<h3>About Me</h3>
+			<br>
+			<h5>Traveller, recreational and technical diving instructor, cave diver and photographer.</h5>
+			<br>
+			<p><%= @admin.about if @admin %></p>
+			<div class="contact-info">
+				<div class="info">
+					<span class="social">
+						<%= link_to 'https://web.facebook.com/Pawel-Ciechelski-Photography-1307521106035720/' do %><i class="fa fa-facebook-official"></i><% end %>
+					</span>
+				</div>
+			</div><!-- / contact-info -->
+		</div><!-- / section-description -->
+	</div><!-- / row -->
 </div><!-- / about-w-image-left -->
 <!-- content -->
-
 <%= javascript_include_tag 'jquery.easing.min', 'scrolling-nav', 'preloader', media: 'all', 'data-turbolinks-track' => true %>

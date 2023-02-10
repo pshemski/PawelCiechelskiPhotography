@@ -1,16 +1,16 @@
 <!-- content -->
 <div class="full-height">
-    <div class="full-height-wrapper">
-        <div class="slider-container">
-            <div class="slider-wrapper">
-                <div class="slider variable-width">
-                    <% @images.each do |image| %>
-                    <div><%= image_tag image.image %></div>
-                    <% end %>
-                </div>
-            </div><!-- / slider-wrapper -->
-        </div><!-- / slider-container -->
-    </div><!-- / full-height-wrapper -->
+	<div class="full-height-wrapper">
+		<div class="slider-container">
+			<div class="slider-wrapper">
+				<div class="slider variable-width">
+					<% @images.each do |image| %>
+						<div><%= image_tag image.image %></div>
+					<% end %>
+				</div>
+			</div><!-- / slider-wrapper -->
+		</div><!-- / slider-container -->
+	</div><!-- / full-height-wrapper -->
 </div><!-- / full-height -->
 <!-- / content -->
 <%= javascript_include_tag 'preloader', 'slick', media: 'all', 'data-turbolinks-track' => true %>
