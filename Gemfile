@@ -27,12 +27,19 @@ gem 'puma'
 group :development, :test do
 	gem 'sqlite3'
   gem 'byebug'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_bot_rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'letter_opener'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 group :production do
