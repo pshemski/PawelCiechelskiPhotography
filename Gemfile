@@ -28,7 +28,7 @@ group :development, :test do
 	gem 'sqlite3'
   gem 'byebug'
   gem 'spring-commands-rspec'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.6'
   gem 'factory_bot_rails'
 end
 
