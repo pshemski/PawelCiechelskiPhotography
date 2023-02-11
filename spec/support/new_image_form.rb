@@ -8,12 +8,11 @@ class NewImageFrom
   end
 
   def fill_the_form_with(params = {})
-    p params[:category]
     within("#new_image") do
       attach_file 'Image', params[:image]
       fill_in 'Image title', with: params[:image_title]
       find('#image_category_id').find(:xpath, 'option[2]').select_option
-      fill_in 'Image description', with: params[:description]
+      fill_in 'Image description', with: params[:image_description]
     end
     self
   end
