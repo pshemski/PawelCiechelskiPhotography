@@ -10,11 +10,24 @@ feature 'image' do
   context 'when creating a new image' do
     scenario 'with invalid attributes' do
       new_image_form.visit_new_image_page.fill_the_form_with(
+        image: nil,
         image_title: 'Test title',
+        image_description: 'Test description',
         category: test_category.name
       ).submit
 
       expect(page).to have_content("Image can't be blank")
+    end
+
+    scenario 'with valid attributes' do
+      new_image_form.visit_new_image_page.fill_the_form_with(
+        image: "#{Rails.root}/spec/fixtures/images/IMG_2560.jpg",
+        image_title: 'Test title',
+        image_description: 'Test description',
+        category: test_category.name
+      ).submit
+
+      expect(page).to have_content("New Image Uploaded")
     end
   end
 end
