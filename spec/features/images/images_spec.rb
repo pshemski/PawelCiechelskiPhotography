@@ -5,7 +5,10 @@ feature 'image' do
   let(:admin) { Admin.create(email: 'user@example.com', password: 'caplin') }
   let!(:test_category) { Category.create(name: 'Test') }
   let(:new_image_form) { NewImageFrom.new }
-  before { login_as(admin) }
+
+  before do
+    login_as admin
+  end
 
   context 'when creating a new image' do
     scenario 'with invalid attributes' do
