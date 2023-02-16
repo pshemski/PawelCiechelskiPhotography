@@ -4,5 +4,5 @@ class Admin < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :trackable, :validatable
   mount_uploader :profile_picture, ImageUploader
-  has_many :images       
+  has_many :images
 end

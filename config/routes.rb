@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :admins, :controllers => { 
+  devise_for :admins, controllers: {
     registrations: 'registrations'
   }, skip: [:sessions]
-  as :admin do  
+  as :admin do
     get 'admin' => 'devise/sessions#new', as: :new_admin_session
     post 'admin' => 'devise/sessions#create', as: :admin_session
     delete 'logout' => 'devise/sessions#destroy', as: :destroy_admin_session
@@ -16,5 +16,5 @@ Rails.application.routes.draw do
   get 'gallery' => 'images#index', as: 'gallery'
   get 'admin/:id' => 'admin#show', as: 'show_admin'
   resources :categories
-  resources :images, except: [:index, :new]
+  resources :images, except: %i[index new]
 end

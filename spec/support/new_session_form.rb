@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class NewSessionFrom
   include Capybara::DSL
 
@@ -7,7 +9,7 @@ class NewSessionFrom
   end
 
   def fill_the_form_with(params = {})
-    within("#new_admin") do
+    within('#new_admin') do
       fill_in 'Email', with: params[:email]
       fill_in 'Password', with: params[:password]
     end

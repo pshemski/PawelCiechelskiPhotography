@@ -4,13 +4,13 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
-  process :resize_to_fill => [2400, 1600], if: :is_landscape?
+  process resize_to_fill: [2400, 1600], if: :is_landscape?
 
-  process :resize_to_fill => [1600, 2400], if: :is_portrait?
+  process resize_to_fill: [1600, 2400], if: :is_portrait?
 
   version :thumb do
-      process :resize_to_fill => [600,400], if: :is_landscape?
-      process :resize_to_fill => [400,600], if: :is_portrait?
+    process resize_to_fill: [600, 400], if: :is_landscape?
+    process resize_to_fill: [400, 600], if: :is_portrait?
   end
 
   # Choose what kind of storage to use for this uploader:
@@ -40,21 +40,21 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def scale(width, height)
   #   # do something
   # end
-  def is_landscape?(new_file)
-      image = ::MiniMagick::Image::read(File.binread(@file.file))
-      Rails.logger.info "from in is_landscape? : #{image[:width] > image[:height]}"
-      image[:width] >= image[:height]
+  def is_landscape?(_new_file)
+    image = ::MiniMagick::Image.read(File.binread(@file.file))
+    Rails.logger.info "from in is_landscape? : #{image[:width] > image[:height]}"
+    image[:width] >= image[:height]
   end
 
   def is_portrait?(new_file)
-    Rails.logger.info "from in is_portrait? : #{ !is_landscape?(new_file)}"
+    Rails.logger.info "from in is_portrait? : #{!is_landscape?(new_file)}"
     !is_landscape?(new_file)
   end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
-    %w(jpg jpeg gif png)
+    %w[jpg jpeg gif png]
   end
 
   # Override the filename of the uploaded files:
@@ -62,5 +62,4 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

@@ -1,6 +1,5 @@
 class AdminController < ApplicationController
-	before_action :authenticate_admin!
+  before_action :authenticate_admin!
 
-  def show
-  end
+  def show; end
 end

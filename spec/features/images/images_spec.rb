@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 require_relative '../../support/new_image_form'
 
@@ -30,7 +32,7 @@ feature 'image' do
         category: test_category.name
       ).submit
 
-      expect(page).to have_content("New Image Uploaded")
+      expect(page).to have_content('New Image Uploaded')
     end
   end
 end

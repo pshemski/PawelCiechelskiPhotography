@@ -67,16 +67,16 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'pawelciechelskiphotography.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default charset: "utf-8"
+  config.action_mailer.default charset: 'utf-8'
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.sendgrid.net",
-    :port                 => 587,
-    :user_name            => ENV['SENDGRID_USERNAME'],
-    :password             => ENV['SENDGRID_PASSWORD'],
-    :authentication       => "plain",
-    :enable_starttls_auto => true
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    authentication: 'plain',
+    enable_starttls_auto: true
   }
 
   # Force all access to the app over SSL, use Strict-Transport-Security,
