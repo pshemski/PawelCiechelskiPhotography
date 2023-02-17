@@ -4,7 +4,7 @@ require 'rails_helper'
 require_relative '../../support/new_message_form'
 
 feature 'image' do
-  let!(:admin) { Admin.create(email: 'user@example.com', password: 'caplin') }
+  let!(:admin) { create(:admin) }
   let(:new_message_form) { NewMessageFrom.new }
 
   context 'when creating a new image' do

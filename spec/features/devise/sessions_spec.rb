@@ -4,7 +4,7 @@ require 'rails_helper'
 require_relative '../../support/new_session_form'
 
 feature 'sessions' do
-  let(:admin) { Admin.create(email: 'user@example.com', password: 'caplin') }
+  let(:admin) { create(:admin) }
   let(:new_session_form) { NewSessionFrom.new }
 
   scenario 'new session page' do

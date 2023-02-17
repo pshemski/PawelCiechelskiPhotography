@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 feature 'categories' do
-  let(:admin) { Admin.create(email: 'user@example.com', password: 'caplin') }
+  let(:admin) { create(:admin) }
 
   before do
     login_as admin
