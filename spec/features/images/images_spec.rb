@@ -5,7 +5,7 @@ require_relative '../../support/new_image_form'
 
 feature 'image' do
   let(:admin) { create(:admin) }
-  let!(:test_category) { Category.create(name: 'Test') }
+  let!(:category) { create(:category) }
   let(:new_image_form) { NewImageFrom.new }
 
   before do
@@ -18,7 +18,7 @@ feature 'image' do
         image: nil,
         image_title: 'Test title',
         image_description: 'Test description',
-        category: test_category.name
+        category: category
       ).submit
 
       expect(page).to have_content("Image can't be blank")
@@ -29,7 +29,7 @@ feature 'image' do
         image: "#{Rails.root}/spec/fixtures/images/IMG_2560.jpg",
         image_title: 'Test title',
         image_description: 'Test description',
-        category: test_category.name
+        category: category
       ).submit
 
       expect(page).to have_content('New Image Uploaded')
