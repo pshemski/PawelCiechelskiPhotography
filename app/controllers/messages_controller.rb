@@ -7,8 +7,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-    if @message.valid?
-      MessageMailer.new_message_notification(@message).deliver
+    if @message.save
       flash[:notice] = 'Thank you for your message. We will get back to you soon.'
       redirect_to contact_path
     else
